@@ -1,0 +1,13 @@
+[Unit]
+Description=Fan controller 
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+User=ubuntu
+Type=simple
+restart=always
+ExecStart=/usr/bin/python3 /home/ubuntu/fancontrol/fancontrol.py
+
+[Install]
+WantedBy=default.target
